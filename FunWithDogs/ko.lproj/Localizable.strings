@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  FunWithDogs
+
+  Created by 정성훈 on 2021/10/13.
+  
+*/
+
+"Hello" = "안녕하세요";
+"I'm Jordy" = "저는 조르디예요";
+"Play animation" = "애니메이션 실행";

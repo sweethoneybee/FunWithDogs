@@ -15,6 +15,9 @@
 		40554D3027143A4300B31C23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40554D2E27143A4300B31C23 /* LaunchScreen.storyboard */; };
 		40554D3927143DC200B31C23 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 40554D3827143DC200B31C23 /* Alamofire */; };
 		40554D3C27143E2200B31C23 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 40554D3B27143E2200B31C23 /* SnapKit */; };
+		40554D3F271686CE00B31C23 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 40554D3E271686CE00B31C23 /* Then */; };
+		40554D422716928A00B31C23 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40554D442716928A00B31C23 /* Localizable.strings */; };
+		40554D492716958F00B31C23 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40554D482716958F00B31C23 /* String+Localization.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,11 @@
 		40554D2C27143A4300B31C23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40554D2F27143A4300B31C23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40554D3127143A4300B31C23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40554D432716928A00B31C23 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		40554D45271692B500B31C23 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		40554D46271692B500B31C23 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		40554D47271692B500B31C23 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		40554D482716958F00B31C23 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +42,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40554D3927143DC200B31C23 /* Alamofire in Frameworks */,
+				40554D3F271686CE00B31C23 /* Then in Frameworks */,
 				40554D3C27143E2200B31C23 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,9 +69,11 @@
 		40554D2227143A4000B31C23 /* FunWithDogs */ = {
 			isa = PBXGroup;
 			children = (
+				40554D442716928A00B31C23 /* Localizable.strings */,
 				40554D2327143A4000B31C23 /* AppDelegate.swift */,
 				40554D2527143A4000B31C23 /* SceneDelegate.swift */,
 				40554D2727143A4000B31C23 /* ViewController.swift */,
+				40554D482716958F00B31C23 /* String+Localization.swift */,
 				40554D2927143A4000B31C23 /* Main.storyboard */,
 				40554D2C27143A4300B31C23 /* Assets.xcassets */,
 				40554D2E27143A4300B31C23 /* LaunchScreen.storyboard */,
@@ -90,6 +101,7 @@
 			packageProductDependencies = (
 				40554D3827143DC200B31C23 /* Alamofire */,
 				40554D3B27143E2200B31C23 /* SnapKit */,
+				40554D3E271686CE00B31C23 /* Then */,
 			);
 			productName = FunWithDogs;
 			productReference = 40554D2027143A4000B31C23 /* FunWithDogs.app */;
@@ -117,11 +129,13 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 40554D1727143A4000B31C23;
 			packageReferences = (
 				40554D3727143DC200B31C23 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				40554D3A27143E2200B31C23 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				40554D3D271686CE00B31C23 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = 40554D2127143A4000B31C23 /* Products */;
 			projectDirPath = "";
@@ -138,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40554D3027143A4300B31C23 /* LaunchScreen.storyboard in Resources */,
+				40554D422716928A00B31C23 /* Localizable.strings in Resources */,
 				40554D2D27143A4300B31C23 /* Assets.xcassets in Resources */,
 				40554D2B27143A4000B31C23 /* Main.storyboard in Resources */,
 			);
@@ -153,6 +168,7 @@
 				40554D2827143A4000B31C23 /* ViewController.swift in Sources */,
 				40554D2427143A4000B31C23 /* AppDelegate.swift in Sources */,
 				40554D2627143A4000B31C23 /* SceneDelegate.swift in Sources */,
+				40554D492716958F00B31C23 /* String+Localization.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +179,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				40554D2A27143A4000B31C23 /* Base */,
+				40554D45271692B500B31C23 /* ko */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -171,8 +188,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				40554D2F27143A4300B31C23 /* Base */,
+				40554D46271692B500B31C23 /* ko */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		40554D442716928A00B31C23 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				40554D432716928A00B31C23 /* en */,
+				40554D47271692B500B31C23 /* ko */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -182,6 +209,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -243,6 +271,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -307,8 +336,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -318,7 +349,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -335,8 +366,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -346,7 +379,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -390,6 +423,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		40554D3D271686CE00B31C23 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -402,6 +443,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 40554D3A27143E2200B31C23 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		40554D3E271686CE00B31C23 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 40554D3D271686CE00B31C23 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
