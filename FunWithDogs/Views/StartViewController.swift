@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-class ViewController: UIViewController {
+class StartViewController: UIViewController {
 
     var titleView: UILabel!
     var subtitleView: UILabel!
@@ -20,64 +20,62 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         setViews()
+        playAnimation()
     }
 
     private func setViews() {
         titleView = UILabel().then {
-            $0.font = .preferredFont(forTextStyle: .largeTitle)
-            $0.text = "Hello".localized
-            $0.textAlignment = .center
+            $0.text = "Fun with Dogs".localized
+            $0.font = .systemFont(ofSize: 44, weight: .heavy)
+            $0.textAlignment = .left
+            $0.sizeToFit()
         }
         
         subtitleView = UILabel().then {
-            $0.font = .preferredFont(forTextStyle: .largeTitle)
-            $0.text = "I'm Jordy".localized
-            $0.textAlignment = .center
+            $0.text = "random dog facts".localized
+            $0.font = .systemFont(ofSize: 22, weight: .heavy)
+            $0.textAlignment = .left
+            $0.sizeToFit()
         }
         
         imageView = UIImageView().then {
-            $0.image = UIImage(named: "jordy")
+            $0.image = UIImage(named: "sittingDog")
             $0.clipsToBounds = true
             $0.contentMode = .scaleAspectFill
         }
         
         button = UIButton().then {
-            $0.setTitle("Play animation".localized, for: .normal)
+            $0.setTitle("start".localized.uppercased(), for: .normal)
             $0.backgroundColor = .systemPink
             $0.layer.cornerRadius = 20
             $0.addTarget(self, action: #selector(playAnimation), for: .touchUpInside)
         }
         
+        view.addSubview(imageView)
         view.addSubview(titleView)
         view.addSubview(subtitleView)
-        view.addSubview(imageView)
         view.addSubview(button)
         configureLayout()
     }
     
     private func configureLayout() {
         titleView.snp.makeConstraints { make in
-            make.centerX.equalTo(self.view)
             make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(40)
-            make.width.equalTo(300)
-            make.height.equalTo(50)
+            make.left.equalTo(self.view.safeAreaLayoutGuide.snp.left).offset(20)
         }
         
         subtitleView.snp.makeConstraints { make in
-            make.centerX.equalTo(self.titleView)
             make.top.equalTo(self.titleView.snp.bottom).offset(0)
-            make.width.equalTo(300)
-            make.height.equalTo(50)
+            make.left.equalTo(self.titleView)
         }
         
         imageView.snp.makeConstraints { make in
-            make.centerX.equalTo(self.subtitleView)
-            make.top.equalTo(self.subtitleView.snp.bottom).offset(20)
-            make.width.height.equalTo(300)
+            make.centerX.centerY.equalTo(self.view)
+            make.width.height.equalTo(self.view)
         }
         
         button.snp.makeConstraints { make in
-            make.centerX.equalTo(self.imageView)
+            make.centerX.equalTo(self.view)
             make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-20)
             make.width.equalTo(self.view.safeAreaLayoutGuide.snp.width).offset(-40)
             make.height.equalTo(50)
@@ -86,32 +84,28 @@ class ViewController: UIViewController {
 }
 
 // MARK:- Taget methods
-extension ViewController {
+extension StartViewController {
     @objc
     func playAnimation() {
         titleView.alpha = 0
         subtitleView.alpha = 0
-        imageView.alpha = 0
         button.alpha = 0
         button.isEnabled = false
         
+        let totalDuration = TimeInterval(3)
         UIView.animateKeyframes(
-            withDuration: 5,
-            delay: 0,
+            withDuration: totalDuration,
+            delay: 1,
             animations: {
-                UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1 / 5) {
+                UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1 / totalDuration) {
                     self.titleView.alpha = 1.0
                 }
                 
-                UIView.addKeyframe(withRelativeStartTime: 1 / 5, relativeDuration: 1 / 5) {
+                UIView.addKeyframe(withRelativeStartTime: 1 / totalDuration, relativeDuration: 1 / totalDuration) {
                     self.subtitleView.alpha = 1.0
                 }
                 
-                UIView.addKeyframe(withRelativeStartTime: 3 / 5, relativeDuration: 1 / 5) {
-                    self.imageView.alpha = 1.0
-                }
-                
-                UIView.addKeyframe(withRelativeStartTime: 9 / 10, relativeDuration: 1 / 10) {
+                UIView.addKeyframe(withRelativeStartTime: 2 / totalDuration, relativeDuration: 1 / totalDuration * 2) {
                     self.button.alpha = 1.0
                 }
             },
