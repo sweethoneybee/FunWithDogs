@@ -9,10 +9,11 @@ import UIKit
 import Then
 import SnapKit
 
-class TempViewController: UIViewController {
-
+class DogFactViewController: UIViewController {
+    private var firstShow = true
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         let label = UILabel().then {
             $0.text = "안녕"
@@ -21,18 +22,14 @@ class TempViewController: UIViewController {
         label.snp.makeConstraints { make in
             make.center.equalTo(view)
         }
-        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(_ animated: Bool) {
+        if firstShow {
+            firstShow.toggle()
+            let vc = StartViewController()
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: false)
+        }
     }
-    */
-
 }

@@ -16,10 +16,21 @@ class StartViewController: UIViewController {
     var imageView: UIImageView!
     var button: UIButton!
     
+    required init?(coder: NSCoder) {
+        fatalError("not use storyboard")
+    }
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setViews()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         playAnimation()
     }
 
@@ -48,7 +59,7 @@ class StartViewController: UIViewController {
             $0.setTitle("start".localized.uppercased(), for: .normal)
             $0.backgroundColor = .systemPink
             $0.layer.cornerRadius = 20
-            $0.addTarget(self, action: #selector(playAnimation), for: .touchUpInside)
+            $0.addTarget(self, action: #selector(dismissSelf), for: .touchUpInside)
         }
         
         view.addSubview(imageView)
@@ -81,11 +92,7 @@ class StartViewController: UIViewController {
             make.height.equalTo(50)
         }
     }
-}
-
-// MARK:- Taget methods
-extension StartViewController {
-    @objc
+    
     func playAnimation() {
         titleView.alpha = 0
         subtitleView.alpha = 0
@@ -115,6 +122,14 @@ extension StartViewController {
                 }
             }
         )
+    }
+}
+
+// MARK:- Taget methods
+extension StartViewController {
+    @objc
+    func dismissSelf() {
+        dismiss(animated: true)
     }
 }
 

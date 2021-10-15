@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		403B3DF2271842C60053572C /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403B3DF1271842C60053572C /* TempViewController.swift */; };
+		403B3DF2271842C60053572C /* DogFactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403B3DF1271842C60053572C /* DogFactViewController.swift */; };
+		403B3DF42719BF150053572C /* UIViewController+Present.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403B3DF32719BF150053572C /* UIViewController+Present.swift */; };
 		40554D2427143A4000B31C23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40554D2327143A4000B31C23 /* AppDelegate.swift */; };
 		40554D2627143A4000B31C23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40554D2527143A4000B31C23 /* SceneDelegate.swift */; };
 		40554D2827143A4000B31C23 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40554D2727143A4000B31C23 /* StartViewController.swift */; };
@@ -26,7 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		403B3DF1271842C60053572C /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
+		403B3DF1271842C60053572C /* DogFactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactViewController.swift; sourceTree = "<group>"; };
+		403B3DF32719BF150053572C /* UIViewController+Present.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Present.swift"; sourceTree = "<group>"; };
 		40554D2027143A4000B31C23 /* FunWithDogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunWithDogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40554D2327143A4000B31C23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40554D2527143A4000B31C23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				40554D482716958F00B31C23 /* String+Localization.swift */,
+				403B3DF32719BF150053572C /* UIViewController+Present.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -123,7 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				40554D2727143A4000B31C23 /* StartViewController.swift */,
-				403B3DF1271842C60053572C /* TempViewController.swift */,
+				403B3DF1271842C60053572C /* DogFactViewController.swift */,
 				40554D2927143A4000B31C23 /* Main.storyboard */,
 			);
 			path = Views;
@@ -213,11 +216,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				403B3DF2271842C60053572C /* TempViewController.swift in Sources */,
+				403B3DF2271842C60053572C /* DogFactViewController.swift in Sources */,
 				40554D2827143A4000B31C23 /* StartViewController.swift in Sources */,
 				40554D2427143A4000B31C23 /* AppDelegate.swift in Sources */,
 				4095FEFC2718339900D96D27 /* UserManager.swift in Sources */,
 				4095FEF4271830FB00D96D27 /* ModelData.swift in Sources */,
+				403B3DF42719BF150053572C /* UIViewController+Present.swift in Sources */,
 				40554D2627143A4000B31C23 /* SceneDelegate.swift in Sources */,
 				4095FEF9271832EB00D96D27 /* DogFact.swift in Sources */,
 				40554D492716958F00B31C23 /* String+Localization.swift in Sources */,
