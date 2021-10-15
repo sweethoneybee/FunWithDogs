@@ -59,7 +59,7 @@ class StartViewController: UIViewController {
             $0.setTitle("start".localized.uppercased(), for: .normal)
             $0.backgroundColor = .systemPink
             $0.layer.cornerRadius = 20
-            $0.addTarget(self, action: #selector(dismissSelf), for: .touchUpInside)
+            $0.addTarget(self, action: #selector(popView), for: .touchUpInside)
         }
         
         view.addSubview(imageView)
@@ -128,8 +128,8 @@ class StartViewController: UIViewController {
 // MARK:- Taget methods
 extension StartViewController {
     @objc
-    func dismissSelf() {
-        dismiss(animated: true)
+    func popView() {
+        navigationController?.popViewController(animated: true)
     }
 }
 

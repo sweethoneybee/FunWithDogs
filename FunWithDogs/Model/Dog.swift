@@ -7,6 +7,6 @@
 
 import Foundation
 
-final class DogFact: Decodable {
+struct Dog: Decodable {
     var fact: String
 }

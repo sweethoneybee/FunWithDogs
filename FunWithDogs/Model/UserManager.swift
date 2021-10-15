@@ -31,4 +31,7 @@ final class UserManager {
     
     @UserDefault(key: "latestDogImageURL", defaultValue: nil)
     static var latestDogImageURL: String?
+    
+    @UserDefault(key: "latestDogImageData", defaultValue: nil)
+    static var latestDogImageData: Data?
 }

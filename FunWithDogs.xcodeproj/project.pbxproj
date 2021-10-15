@@ -22,8 +22,10 @@
 		40554D492716958F00B31C23 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40554D482716958F00B31C23 /* String+Localization.swift */; };
 		4095FEF2271830D000D96D27 /* dogFactData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4095FEF1271830D000D96D27 /* dogFactData.json */; };
 		4095FEF4271830FB00D96D27 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4095FEF3271830FB00D96D27 /* ModelData.swift */; };
-		4095FEF9271832EB00D96D27 /* DogFact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4095FEF8271832EB00D96D27 /* DogFact.swift */; };
+		4095FEF9271832EB00D96D27 /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4095FEF8271832EB00D96D27 /* Dog.swift */; };
 		4095FEFC2718339900D96D27 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4095FEFB2718339900D96D27 /* UserManager.swift */; };
+		409A69582719EBAF0099A128 /* DogFactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409A69572719EBAF0099A128 /* DogFactViewModel.swift */; };
+		409A695C2719F7460099A128 /* DogPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409A695B2719F7460099A128 /* DogPicture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,8 +46,10 @@
 		40554D482716958F00B31C23 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		4095FEF1271830D000D96D27 /* dogFactData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dogFactData.json; sourceTree = "<group>"; };
 		4095FEF3271830FB00D96D27 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
-		4095FEF8271832EB00D96D27 /* DogFact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFact.swift; sourceTree = "<group>"; };
+		4095FEF8271832EB00D96D27 /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 		4095FEFB2718339900D96D27 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		409A69572719EBAF0099A128 /* DogFactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactViewModel.swift; sourceTree = "<group>"; };
+		409A695B2719F7460099A128 /* DogPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogPicture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +103,9 @@
 			isa = PBXGroup;
 			children = (
 				4095FEF3271830FB00D96D27 /* ModelData.swift */,
-				4095FEF8271832EB00D96D27 /* DogFact.swift */,
+				4095FEF8271832EB00D96D27 /* Dog.swift */,
 				4095FEFB2718339900D96D27 /* UserManager.swift */,
+				409A695B2719F7460099A128 /* DogPicture.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -127,6 +132,7 @@
 			children = (
 				40554D2727143A4000B31C23 /* StartViewController.swift */,
 				403B3DF1271842C60053572C /* DogFactViewController.swift */,
+				409A69572719EBAF0099A128 /* DogFactViewModel.swift */,
 				40554D2927143A4000B31C23 /* Main.storyboard */,
 			);
 			path = Views;
@@ -216,14 +222,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				409A695C2719F7460099A128 /* DogPicture.swift in Sources */,
 				403B3DF2271842C60053572C /* DogFactViewController.swift in Sources */,
 				40554D2827143A4000B31C23 /* StartViewController.swift in Sources */,
 				40554D2427143A4000B31C23 /* AppDelegate.swift in Sources */,
 				4095FEFC2718339900D96D27 /* UserManager.swift in Sources */,
 				4095FEF4271830FB00D96D27 /* ModelData.swift in Sources */,
+				409A69582719EBAF0099A128 /* DogFactViewModel.swift in Sources */,
 				403B3DF42719BF150053572C /* UIViewController+Present.swift in Sources */,
 				40554D2627143A4000B31C23 /* SceneDelegate.swift in Sources */,
-				4095FEF9271832EB00D96D27 /* DogFact.swift in Sources */,
+				4095FEF9271832EB00D96D27 /* Dog.swift in Sources */,
 				40554D492716958F00B31C23 /* String+Localization.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,14 +392,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YJQB6Z2VPH;
+				DEVELOPMENT_TEAM = 69L35L7Y9R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FunWithDogs/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -401,8 +409,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sweethoneybee.FunWithDogs;
+				PRODUCT_BUNDLE_IDENTIFIER = com.soho.FunWithDogs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -414,14 +423,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YJQB6Z2VPH;
+				DEVELOPMENT_TEAM = 69L35L7Y9R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FunWithDogs/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -431,8 +440,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sweethoneybee.FunWithDogs;
+				PRODUCT_BUNDLE_IDENTIFIER = com.soho.FunWithDogs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

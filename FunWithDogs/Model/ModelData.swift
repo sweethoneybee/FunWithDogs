@@ -8,7 +8,7 @@
 import Foundation
 
 final class ModelData {
-    var dogFacts: [DogFact] = LocalData.load("dogFactData.json")
+    var dogs: [Dog] = LocalData.load("dogFactData.json")
 }
 
 final class LocalData {
