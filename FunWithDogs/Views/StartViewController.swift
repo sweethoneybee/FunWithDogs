@@ -26,15 +26,19 @@ class StartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setViews()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         playAnimation()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = false
+    }
 
     private func setViews() {
+        navigationController?.isNavigationBarHidden = true
         titleView = UILabel().then {
             $0.text = "Fun with Dogs".localized
             $0.font = .systemFont(ofSize: 44, weight: .heavy)
@@ -125,7 +129,7 @@ class StartViewController: UIViewController {
     }
 }
 
-// MARK:- Taget methods
+// MARK: - Taget methods
 extension StartViewController {
     @objc
     func popView() {

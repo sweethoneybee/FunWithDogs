@@ -13,9 +13,11 @@ class DogFactViewController: UIViewController {
     var dogImageView: UIImageView!
     var dogFactDescription: UILabel!
     var refreshButton: UIButton!
-    var indicator = UIActivityIndicatorView(style: .medium)
+    var indicator = UIActivityIndicatorView(style: .large)
     
     var viewModel: DogFactViewModel
+    
+    private var isRefreshing = false
     
     required init?(coder: NSCoder) {
         fatalError("not use storyboard")
@@ -36,11 +38,26 @@ class DogFactViewController: UIViewController {
               let image = UIImage(data: data) else {
                   return
               }
-        dogImageView.image = image
+        
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut) {
+            self.dogImageView.alpha = 0
+        } completion: { _ in
+            self.dogImageView.image = image
+            UIView.animate(withDuration: 0.7, delay: 0, options: .curveEaseOut) {
+                self.dogImageView.alpha = 1
+            }
+        }
     }
     
     private func dogFactDidChange(_ fact: String) {
-        dogFactDescription.text = fact
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut) {
+            self.dogFactDescription.alpha = 0
+        } completion: { _ in
+            self.dogFactDescription.text = fact
+            UIView.animate(withDuration: 0.7, delay: 0, options: .curveEaseOut) {
+                self.dogFactDescription.alpha = 1
+            }
+        }
     }
     
     override func viewDidLoad() {
@@ -50,6 +67,7 @@ class DogFactViewController: UIViewController {
         setViews()
     }
     
+    // MARK: - Configure Methods
     private func configureNavigation() {
         let settingItem = UIBarButtonItem(
             image: UIImage(systemName: "gearshape"),
@@ -59,6 +77,8 @@ class DogFactViewController: UIViewController {
         )
         settingItem.tintColor = .black
         navigationItem.rightBarButtonItem = settingItem
+        
+        navigationItem.title = "Fun with Dogs"
     }
     
     private func setViews() {
@@ -75,21 +95,20 @@ class DogFactViewController: UIViewController {
         
         dogFactDescription = UILabel().then {
             $0.font = .systemFont(ofSize: 14)
-            $0.numberOfLines = 8
+            $0.numberOfLines = 15
             $0.textAlignment = .center
             $0.text = viewModel.dogFact
             $0.sizeToFit()
         }
         
         refreshButton = UIButton().then {
-            $0.setTitle("refresh".localized.uppercased(), for: .normal)
+            $0.setTitle("new fact".localized, for: .normal)
             $0.backgroundColor = .systemPink
             $0.layer.cornerRadius = 30
             $0.addTarget(self, action: #selector(refreshDog), for: .touchUpInside)
         }
         
         indicator.tintColor = .systemPink
-        
 
         view.addSubview(dogImageView)
         view.addSubview(dogFactDescription)
@@ -114,7 +133,7 @@ class DogFactViewController: UIViewController {
         refreshButton.snp.makeConstraints { make in
             make.centerX.equalTo(view)
             make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-20)
-            make.width.equalTo(90)
+            make.width.equalTo(150)
             make.height.equalTo(60)
         }
         
@@ -125,7 +144,7 @@ class DogFactViewController: UIViewController {
     }
 }
 
-// MARK:- target methods
+// MARK: - target methods
 extension DogFactViewController {
     @objc
     func pushSettingVC() {
@@ -134,9 +153,15 @@ extension DogFactViewController {
     
     @objc
     func refreshDog() {
+        guard isRefreshing == false else {
+            return
+        }
+
+        isRefreshing = true
         indicator.startAnimating()
         viewModel.refreshDog(previousFact: dogFactDescription.text ?? "") {
             self.indicator.stopAnimating()
+            self.isRefreshing = false
         }
     }
 }

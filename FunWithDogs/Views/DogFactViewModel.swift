@@ -44,32 +44,30 @@ final class DogFactViewModel {
         AF.request("https://dog.ceo/api/breeds/image/random")
             .validate()
             .responseDecodable(of: DogPicture.self) { response in
-                guard let dogPicture = response.value,
-                let url = URL(string: dogPicture.message) else {
+                guard let imageURL = response.value?.message else {
+                    fetchGroup.leave()
                     return
                 }
                 
-                do {
-                    data = try Data(contentsOf: url)
-                    fetchGroup.leave()
-                } catch {
-                    fetchGroup.leave()
-                }
+                AF.download(imageURL)
+                    .responseData { response in
+                        data = response.value
+                        fetchGroup.leave()
+                    }
             }
         
         var randomFact = previousFact
         var roopCount = 0
-        fetchGroup.enter()
         while randomFact == previousFact,
               roopCount < 10 {
             randomFact = dogs[Int.random(in: 0..<dogs.count)].fact
             roopCount += 1
         }
-        fetchGroup.leave()
         
         fetchGroup.notify(queue: .main) {
             self.dogImageData = data
             self.dogFact = randomFact
+            UserManager.readFactCount += 1
             completionHander?()
         }
     }
