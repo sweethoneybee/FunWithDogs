@@ -69,6 +69,9 @@ class DogFactViewController: UIViewController {
     
     // MARK: - Configure Methods
     private func configureNavigation() {
+        navigationItem.title = "Fun with Dogs"
+        navigationItem.backButtonDisplayMode = .minimal
+        
         let settingItem = UIBarButtonItem(
             image: UIImage(systemName: "gearshape"),
             style: .plain,
@@ -77,8 +80,6 @@ class DogFactViewController: UIViewController {
         )
         settingItem.tintColor = .black
         navigationItem.rightBarButtonItem = settingItem
-        
-        navigationItem.title = "Fun with Dogs"
     }
     
     private func setViews() {
@@ -148,7 +149,8 @@ class DogFactViewController: UIViewController {
 extension DogFactViewController {
     @objc
     func pushSettingVC() {
-        print("hi")
+        let settingVC = SettingViewController()
+        navigationController?.pushViewController(settingVC, animated: true)
     }
     
     @objc
@@ -156,7 +158,7 @@ extension DogFactViewController {
         guard isRefreshing == false else {
             return
         }
-
+        
         isRefreshing = true
         indicator.startAnimating()
         viewModel.refreshDog(previousFact: dogFactDescription.text ?? "") {
