@@ -8,7 +8,14 @@
 import Foundation
 
 final class ModelData {
-    var dogs: [Dog] = LocalData.load("dogFactData.json")
+    var dogs: [Dog] = {
+        let locale = Locale.current.languageCode
+        
+        if locale == "ko" {
+            return LocalData.load("dogFactData_korean.json")
+        }
+        return LocalData.load("dogFactData.json")
+    }()
 }
 
 final class LocalData {
