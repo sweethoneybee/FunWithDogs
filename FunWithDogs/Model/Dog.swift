@@ -7,6 +7,15 @@
 
 import Foundation
 
-struct Dog: Decodable {
-    var fact: String
+struct Dog: Decodable, Hashable {
+    let fact: String
+    let identifier = UUID()
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(identifier)
+    }
+    
+    static func == (lhs: Dog, rhs: Dog) -> Bool {
+        return lhs.identifier == rhs.identifier
+    }
 }

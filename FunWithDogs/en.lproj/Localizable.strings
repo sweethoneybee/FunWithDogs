@@ -15,3 +15,12 @@
 "start" = "start";
 
 "new fact" = "🧐 new fact";
+
+"Settings" = "Settings";
+"Hooray! We found %d dogs" = "Hooray! we found %d dogs";
+"Search all dog facts" = "Search all dog facts";
+"How to use" = "How to use";
+"Open-source license" = "Open source license";
+"Github" = "Github";
+
+"find dogs fact..." = "find dogs fact...";

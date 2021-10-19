@@ -18,17 +18,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let dogFactVC = DogFactViewController(viewModel: DogFactViewModel())
         let nvc = UINavigationController(rootViewController: dogFactVC)
         
-//        let startVC = StartViewController()
-//        startVC.navigationItem.hidesBackButton = true
-//        nvc.pushViewController(startVC, animated: false)
-        
-//        let navBarAppearance = UINavigationBarAppearance()
-//        navBarAppearance.configureWithOpaqueBackground()
-//        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-//        navBarAppearance.backgroundColor = .systemPink
-//        nvc.navigationBar.standardAppearance = navBarAppearance
-//        nvc.navigationBar.scrollEdgeAppearance = navBarAppearance
-//        nvc.navigationBar.prefersLargeTitles = true
+        let startVC = StartViewController()
+        startVC.navigationItem.hidesBackButton = true
+        nvc.pushViewController(startVC, animated: false)
         
         window?.rootViewController = nvc
         window?.makeKeyAndVisible()
