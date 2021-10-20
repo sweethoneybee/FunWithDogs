@@ -26,7 +26,7 @@ class StartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setViews()
+        configureHierarchy()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -37,12 +37,13 @@ class StartViewController: UIViewController {
         navigationController?.isNavigationBarHidden = false
     }
 
-    private func setViews() {
+    private func configureHierarchy() {
         navigationController?.isNavigationBarHidden = true
         titleView = UILabel().then {
             $0.text = "Fun with Dogs".localized
             $0.font = .systemFont(ofSize: 44, weight: .heavy)
             $0.textAlignment = .left
+            $0.textColor = .black
             $0.sizeToFit()
         }
         
@@ -50,6 +51,7 @@ class StartViewController: UIViewController {
             $0.text = "random dog facts".localized
             $0.font = .systemFont(ofSize: 22, weight: .heavy)
             $0.textAlignment = .left
+            $0.textColor = .black
             $0.sizeToFit()
         }
         

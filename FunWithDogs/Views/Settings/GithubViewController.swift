@@ -15,7 +15,7 @@ class GithubViewController: UIViewController {
     
     init() {
         super.init(nibName: nil, bundle: nil)
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
     }
     
     override func viewDidLoad() {

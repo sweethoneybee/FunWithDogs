@@ -40,12 +40,12 @@ class SettingsViewController: UIViewController {
     
     init() {
         super.init(nibName: nil, bundle: nil)
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
     }
     
     override func viewDidLoad() {
         configureNavigation()
-        configureViews()
+        configureHierarchy()
         configureDataSource()
     }
     
@@ -55,7 +55,7 @@ class SettingsViewController: UIViewController {
         navigationItem.backButtonDisplayMode = .minimal
     }
     
-    private func configureViews() {
+    private func configureHierarchy() {
         tableView = UITableView(frame: .zero, style: .grouped).then {
             $0.delegate = self
         }

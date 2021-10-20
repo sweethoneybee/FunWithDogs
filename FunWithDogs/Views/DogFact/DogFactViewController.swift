@@ -10,6 +10,7 @@ import Then
 import SnapKit
 
 class DogFactViewController: UIViewController {
+    var containerView: UIView!
     var dogImageView: UIImageView!
     var dogFactDescription: UILabel!
     var refreshButton: UIButton!
@@ -27,7 +28,7 @@ class DogFactViewController: UIViewController {
         self.viewModel = viewModel
         
         super.init(nibName: nil, bundle: nil)
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         
         self.viewModel.dogImageDataDidChange = dogImageDataDidChange(_:)
         self.viewModel.dogFactDidChange = dogFactDidChange(_:)
@@ -37,7 +38,7 @@ class DogFactViewController: UIViewController {
         super.viewDidLoad()
     
         configureNavigation()
-        setViews()
+        configureHierarchy()
     }
     
     private func dogImageDataDidChange(_ data: Data?) {
@@ -78,15 +79,23 @@ class DogFactViewController: UIViewController {
             target: self,
             action: #selector(pushSettingVC)
         )
-        settingItem.tintColor = .black
+        settingItem.tintColor = .systemPink
         navigationItem.rightBarButtonItem = settingItem
     }
     
-    private func setViews() {
+    private func configureHierarchy() {
+        containerView = UIView().then {
+            $0.layer.shadowOpacity = 0.5
+            $0.layer.shadowOffset = CGSize(width: 8, height: 5)
+            $0.layer.shadowRadius = 10
+            $0.layer.masksToBounds = false
+        }
+        
         dogImageView = UIImageView().then {
             $0.contentMode = .scaleAspectFill
             $0.clipsToBounds = true
             $0.layer.cornerRadius = 20
+            
             if let data = viewModel.dogImageData {
                 $0.image = UIImage(data: data)
             } else {
@@ -95,7 +104,7 @@ class DogFactViewController: UIViewController {
         }
         
         dogFactDescription = UILabel().then {
-            $0.font = .systemFont(ofSize: 14)
+            $0.font = .systemFont(ofSize: 17)
             $0.numberOfLines = 15
             $0.textAlignment = .center
             $0.text = viewModel.dogFact
@@ -111,7 +120,8 @@ class DogFactViewController: UIViewController {
         
         indicator.tintColor = .systemPink
 
-        view.addSubview(dogImageView)
+        view.addSubview(containerView)
+        containerView.addSubview(dogImageView)
         view.addSubview(dogFactDescription)
         view.addSubview(refreshButton)
         view.addSubview(indicator)
@@ -119,10 +129,17 @@ class DogFactViewController: UIViewController {
     }
     
     private func configureLayouts() {
-        dogImageView.snp.makeConstraints { make in
+        containerView.snp.makeConstraints { make in
             make.centerX.equalTo(view)
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(50)
-            make.width.height.equalTo(300)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
+            
+            make.width.equalTo(containerView.snp.height).priority(1000)
+            make.leading.trailing.edges.equalToSuperview().inset(20).priority(900)
+            make.width.lessThanOrEqualTo(330).priority(800)
+        }
+        
+        dogImageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
         
         dogFactDescription.snp.makeConstraints { make in

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PanModal
 
 class SearchDogFactsViewController: UIViewController {
 
@@ -25,7 +26,7 @@ class SearchDogFactsViewController: UIViewController {
     
     init() {
         super.init(nibName: nil, bundle: nil)
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
     }
     
     override func viewDidLoad() {
@@ -36,6 +37,7 @@ class SearchDogFactsViewController: UIViewController {
     }
 }
 
+// MARK: - CollectionViewLayout
 extension SearchDogFactsViewController {
     private func createLayout() -> UICollectionViewCompositionalLayout {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
@@ -54,6 +56,7 @@ extension SearchDogFactsViewController {
     }
 }
 
+// MARK: - Hierarchy
 extension SearchDogFactsViewController {
     private func configureHierarchy() {
         searchBar = UISearchBar().then {
@@ -67,12 +70,6 @@ extension SearchDogFactsViewController {
         
         navigationItem.titleView = searchBar
         view.addSubview(collectionView)
-        
-        configureLayouts()
-    }
-    
-    private func configureLayouts() {
-        
     }
     
     private func configureDataSource() {
@@ -96,7 +93,15 @@ extension SearchDogFactsViewController {
 // MARK: - CollectionView Delegate
 extension SearchDogFactsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let item = dataSoruce.itemIdentifier(for: indexPath) {
+            let destination = DetailFactViewController()
+            destination.content = item.fact
+            
+            presentPanModal(destination)
+        }
+        
         searchBar.endEditing(true)
+        collectionView.deselectItem(at: indexPath, animated: true)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

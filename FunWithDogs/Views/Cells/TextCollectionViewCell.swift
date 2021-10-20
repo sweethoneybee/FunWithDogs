@@ -37,4 +37,24 @@ class TextCollectionViewCell: UICollectionViewCell {
             make.trailing.bottom.equalToSuperview().offset(-inset)
         }
     }
+    
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                backgroundColor = .systemPink.withAlphaComponent(0.4)
+            } else {
+                backgroundColor = .clear
+            }
+        }
+    }
+    
+    override var isHighlighted: Bool {
+        didSet {
+            if isHighlighted {
+                backgroundColor = .systemPink.withAlphaComponent(0.4)
+            } else {
+                backgroundColor = .clear
+            }
+        }
+    }
 }
