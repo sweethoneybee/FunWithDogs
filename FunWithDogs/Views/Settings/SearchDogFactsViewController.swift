@@ -67,6 +67,7 @@ extension SearchDogFactsViewController {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.delegate = self
+        collectionView.keyboardDismissMode = .onDrag
         
         navigationItem.titleView = searchBar
         view.addSubview(collectionView)
@@ -93,19 +94,13 @@ extension SearchDogFactsViewController {
 // MARK: - CollectionView Delegate
 extension SearchDogFactsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
         if let item = dataSoruce.itemIdentifier(for: indexPath) {
             let destination = DetailFactViewController()
             destination.content = item.fact
             
             presentPanModal(destination)
         }
-        
-        searchBar.endEditing(true)
-        collectionView.deselectItem(at: indexPath, animated: true)
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        searchBar.endEditing(true)
     }
 }
 

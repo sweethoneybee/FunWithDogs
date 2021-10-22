@@ -20,7 +20,7 @@
 "Hooray! We found %d dogs" = "만세! %d마리의 개를 봤어요";
 "Search all dog facts" = "개사실 전체 찾아보기";
 "How to use" = "사용방법";
-"Open-source license" = "오픈소스 라이선스";
+"Open source license" = "오픈 소스 라이선스";
 "Github" = "개발자 깃허브";
 
 "find dogs fact..." = "개사실을 찾아보세요";
@@ -28,3 +28,5 @@
 "Detail Fact" = "상세 사실";
 
 "Github page" = "깃허브 페이지";
+
+"Open Source License" = "오픈 소스 라이선스";

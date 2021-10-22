@@ -114,7 +114,7 @@ extension SettingsViewController {
         let tutorial = Item(content: "How to use".localized)
         snapshot.appendItems([search, tutorial], toSection: .user)
         
-        let source = Item(content: "Open-source license".localized)
+        let source = Item(content: "Open source license".localized)
         let github = Item(content: "Github".localized)
         snapshot.appendItems([source, github], toSection: .dev)
         

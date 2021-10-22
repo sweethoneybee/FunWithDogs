@@ -35,6 +35,7 @@
 		40C8DE0F271EF72900B8C5FC /* dogFactData_korean.json in Resources */ = {isa = PBXBuildFile; fileRef = 40C8DE0E271EF72900B8C5FC /* dogFactData_korean.json */; };
 		40C8DE11271FCCC600B8C5FC /* DetailFactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C8DE10271FCCC600B8C5FC /* DetailFactViewController.swift */; };
 		40C8DE14271FDD9D00B8C5FC /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = 40C8DE13271FDD9D00B8C5FC /* PanModal */; };
+		40C8DE172722FA7A00B8C5FC /* OpensourceLicense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C8DE162722FA7A00B8C5FC /* OpensourceLicense.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		40C8DE0B271EEA1800B8C5FC /* TextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCollectionViewCell.swift; sourceTree = "<group>"; };
 		40C8DE0E271EF72900B8C5FC /* dogFactData_korean.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dogFactData_korean.json; sourceTree = "<group>"; };
 		40C8DE10271FCCC600B8C5FC /* DetailFactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFactViewController.swift; sourceTree = "<group>"; };
+		40C8DE162722FA7A00B8C5FC /* OpensourceLicense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpensourceLicense.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			children = (
 				4095FEF1271830D000D96D27 /* dogFactData.json */,
 				40C8DE0E271EF72900B8C5FC /* dogFactData_korean.json */,
+				40C8DE162722FA7A00B8C5FC /* OpensourceLicense.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				40C8DE08271EE48B00B8C5FC /* GithubViewController.swift in Sources */,
 				409A69582719EBAF0099A128 /* DogFactViewModel.swift in Sources */,
 				40C8DE11271FCCC600B8C5FC /* DetailFactViewController.swift in Sources */,
+				40C8DE172722FA7A00B8C5FC /* OpensourceLicense.swift in Sources */,
 				40C8DE02271EE46A00B8C5FC /* SearchDogFactsViewController.swift in Sources */,
 				40C8DE0C271EEA1800B8C5FC /* TextCollectionViewCell.swift in Sources */,
 				40C8DE04271EE47600B8C5FC /* TutorialViewController.swift in Sources */,

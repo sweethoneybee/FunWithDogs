@@ -20,7 +20,7 @@
 "Hooray! We found %d dogs" = "Hooray! we found %d dogs";
 "Search all dog facts" = "Search all dog facts";
 "How to use" = "How to use";
-"Open-source license" = "Open source license";
+"Open source license" = "Open source license";
 "Github" = "Github";
 
 "find dogs fact..." = "find dogs fact...";
@@ -28,3 +28,5 @@
 "Detail Fact" = "Detail Fact";
 
 "Check out github page" = "Check out github page";
+
+"Open Source License" = "Open Source License";
