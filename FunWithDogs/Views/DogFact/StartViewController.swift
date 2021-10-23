@@ -62,7 +62,7 @@ class StartViewController: UIViewController {
         }
         
         button = UIButton().then {
-            $0.setTitle("start".localized.uppercased(), for: .normal)
+            $0.setTitle("Let's fun with dogs!".localized.uppercased(), for: .normal)
             $0.backgroundColor = .systemPink
             $0.layer.cornerRadius = 20
             $0.addTarget(self, action: #selector(popView), for: .touchUpInside)

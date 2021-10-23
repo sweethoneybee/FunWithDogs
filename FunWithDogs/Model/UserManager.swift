@@ -34,4 +34,7 @@ final class UserManager {
     
     @UserDefault(key: "latestDogImageData", defaultValue: nil)
     static var latestDogImageData: Data?
+    
+    @UserDefault(key: "isFirstLaunched", defaultValue: true)
+    static var isFirstLaunched: Bool
 }

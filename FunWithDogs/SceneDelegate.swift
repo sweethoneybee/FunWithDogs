@@ -18,9 +18,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let dogFactVC = DogFactViewController(viewModel: DogFactViewModel())
         let nvc = UINavigationController(rootViewController: dogFactVC)
         
-//        let startVC = StartViewController()
-//        startVC.navigationItem.hidesBackButton = true
-//        nvc.pushViewController(startVC, animated: false)
+        if UserManager.isFirstLaunched {
+            UserManager.isFirstLaunched.toggle()
+            let startVC = StartViewController()
+            startVC.navigationItem.hidesBackButton = true
+            nvc.pushViewController(startVC, animated: false)
+        }
         
         window?.rootViewController = nvc
         window?.makeKeyAndVisible()

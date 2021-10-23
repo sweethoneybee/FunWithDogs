@@ -85,7 +85,7 @@ class SettingsViewController: UIViewController {
         
         headerLabel.snp.makeConstraints { make in
             make.width.equalToSuperview()
-            make.height.equalTo(10)
+            make.height.equalTo(15)
             make.leading.equalToSuperview().offset(15)
             make.bottom.equalToSuperview().offset(-5)
         }
