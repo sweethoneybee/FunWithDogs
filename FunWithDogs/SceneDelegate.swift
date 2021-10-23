@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let nvc = UINavigationController(rootViewController: dogFactVC)
         
         if UserManager.isFirstLaunched {
-            UserManager.isFirstLaunched.toggle()
+            UserManager.isFirstLaunched = false
             let startVC = StartViewController()
             startVC.navigationItem.hidesBackButton = true
             nvc.pushViewController(startVC, animated: false)
