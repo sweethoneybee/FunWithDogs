@@ -19,6 +19,7 @@ class DogFactViewController: UIViewController {
     var viewModel: DogFactViewModel
     
     private var isRefreshing = false
+    private var isScaleAspectFit = false
     
     required init?(coder: NSCoder) {
         fatalError("not use storyboard")
@@ -39,6 +40,8 @@ class DogFactViewController: UIViewController {
     
         configureNavigation()
         configureHierarchy()
+        
+        addGesture()
     }
     
     private func dogImageDataDidChange(_ data: Data?) {
@@ -182,5 +185,24 @@ extension DogFactViewController {
             self.indicator.stopAnimating()
             self.isRefreshing = false
         }
+    }
+    
+    @objc
+    func dogImageViewTapped(sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            containerView.backgroundColor = isScaleAspectFit ? .systemBackground : .clear
+            dogImageView.contentMode = isScaleAspectFit ? .scaleAspectFit : .scaleAspectFill
+            dogImageView.setNeedsLayout()
+            
+            isScaleAspectFit.toggle()
+        }
+    }
+}
+
+// MARK: - Gesture
+extension DogFactViewController {
+    private func addGesture() {
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(dogImageViewTapped(sender:)))
+        containerView.addGestureRecognizer(tapRecognizer)
     }
 }
