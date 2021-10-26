@@ -45,6 +45,7 @@ class DogFactViewController: UIViewController {
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
         containerView.backgroundColor = isScaleAspectFit ? .userInterfaceStyleBackgroundColor : .clear
         containerView.layer.shadowColor = UIColor.userInterfaceStyleShadowColor.cgColor
     }
