@@ -44,6 +44,14 @@ class DogFactViewController: UIViewController {
         addGesture()
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        containerView.backgroundColor = isScaleAspectFit ? .userInterfaceStyleBackgroundColor : .clear
+        containerView.layer.shadowColor = UIColor.userInterfaceStyleShadowColor.cgColor
+    }
+}
+
+// MARK: - Closures for property change
+extension DogFactViewController {
     private func dogImageDataDidChange(_ data: Data?) {
         guard let data = data,
               let image = UIImage(data: data) else {
@@ -70,8 +78,10 @@ class DogFactViewController: UIViewController {
             }
         }
     }
-    
-    // MARK: - Configure Methods
+}
+
+// MARK: - Configure Methods
+extension DogFactViewController {
     private func configureNavigation() {
         navigationItem.title = "Fun with Dogs"
         navigationItem.backButtonDisplayMode = .minimal
@@ -91,6 +101,7 @@ class DogFactViewController: UIViewController {
             $0.layer.shadowOpacity = 0.5
             $0.layer.shadowOffset = CGSize(width: 8, height: 5)
             $0.layer.shadowRadius = 10
+            $0.layer.shadowColor = UIColor.userInterfaceStyleShadowColor.cgColor
             $0.layer.masksToBounds = false
         }
         
@@ -190,11 +201,11 @@ extension DogFactViewController {
     @objc
     func dogImageViewTapped(sender: UITapGestureRecognizer) {
         if sender.state == .ended {
-            containerView.backgroundColor = isScaleAspectFit ? .systemBackground : .clear
+            isScaleAspectFit.toggle()
+            containerView.backgroundColor = isScaleAspectFit ? .userInterfaceStyleBackgroundColor : .clear
             dogImageView.contentMode = isScaleAspectFit ? .scaleAspectFit : .scaleAspectFill
             dogImageView.setNeedsLayout()
             
-            isScaleAspectFit.toggle()
         }
     }
 }

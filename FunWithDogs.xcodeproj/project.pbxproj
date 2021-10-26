@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40245CF827282670002E84A8 /* UIColor+UserInterfaceStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40245CF727282670002E84A8 /* UIColor+UserInterfaceStyle.swift */; };
 		403B3DF2271842C60053572C /* DogFactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403B3DF1271842C60053572C /* DogFactViewController.swift */; };
 		403B3DF42719BF150053572C /* UIViewController+Present.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403B3DF32719BF150053572C /* UIViewController+Present.swift */; };
 		40554D2427143A4000B31C23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40554D2327143A4000B31C23 /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		40245CF727282670002E84A8 /* UIColor+UserInterfaceStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+UserInterfaceStyle.swift"; sourceTree = "<group>"; };
 		403B3DF1271842C60053572C /* DogFactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactViewController.swift; sourceTree = "<group>"; };
 		403B3DF32719BF150053572C /* UIViewController+Present.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Present.swift"; sourceTree = "<group>"; };
 		40554D2027143A4000B31C23 /* FunWithDogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunWithDogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +147,7 @@
 			children = (
 				40554D482716958F00B31C23 /* String+Localization.swift */,
 				403B3DF32719BF150053572C /* UIViewController+Present.swift */,
+				40245CF727282670002E84A8 /* UIColor+UserInterfaceStyle.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40245CF827282670002E84A8 /* UIColor+UserInterfaceStyle.swift in Sources */,
 				409A695C2719F7460099A128 /* DogPicture.swift in Sources */,
 				40C8DE06271EE48600B8C5FC /* LicenseViewController.swift in Sources */,
 				403B3DF2271842C60053572C /* DogFactViewController.swift in Sources */,
